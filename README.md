@@ -19,4 +19,4 @@ Ensure you have the following installed on your workstation:
     - `Start the application in a debugging session`: Press `F5`, or click `Debug -> Start Debugging` from the VS Code top navigation.
     - `Start the application w/out debugger`:
         - Press `CTRL + F5`, or click `Debug -> Start Without Debugging` from the VS Code top navigation.
-        - Run `npm start` from the container environment terminal
+        - Run `npm start` from the container environment terminal.
