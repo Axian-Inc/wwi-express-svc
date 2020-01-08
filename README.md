@@ -14,9 +14,16 @@ Ensure you have the following installed on your workstation:
 ### Running Locally
 1. Clone down this repository.
 2. Open the folder in VS Code, the `Remote Containers` extension will notice the `.devcontainer\devcontainer.json` and attempt to build a container to house this environment and open this folder inside the container, as described by the project's root `Dockerfile`.
-3. Once VS Code is running with the folder hosted out of the container, set the application config in the `.env` file.
+3. Once VS Code is running with the folder hosted out of the container, set the application config in the `.env` file. This is where credentials to the database server are set, along with the target `PORT` to host the serviceon. You can source these values from Gabe Harris or Tyler Holmes.
+```
+PORT=8081
+DB_HOST=someDatabaseServer.database.windows.net
+DB_USER=someUser
+DB_PASS=somePassword
+```
+
 4. Run this application via one of the following means:
     - `Start the application in a debugging session`: Press `F5`, or click `Debug -> Start Debugging` from the VS Code top navigation.
     - `Start the application w/out debugger`:
         - Press `CTRL + F5`, or click `Debug -> Start Without Debugging` from the VS Code top navigation.
-        - Run `npm start` from the container environment terminal.
+        - Run `yarn start` from the container environment terminal.
