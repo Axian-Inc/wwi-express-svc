@@ -4,7 +4,7 @@ import PurchasingRouter from "./routers/purchasing.router";
 import SalesRouter from "./routers/sales.router";
 import WarehouseRouter from "./routers/warehouse.router";
 
-const app = new App(process.env.PORT || 8082, [
+const app = new App(process.env.PORT || 8081, [
   new ApplicationRouter(),
   new PurchasingRouter(),
   new SalesRouter(),
