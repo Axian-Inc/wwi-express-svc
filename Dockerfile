@@ -14,6 +14,7 @@ RUN yarn install
  
 # Bundle app source
 COPY . .
- 
+
+# Expose the port and setup the startup command
 EXPOSE 8080
 CMD [ "yarn", "start" ]
