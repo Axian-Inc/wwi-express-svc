@@ -3,8 +3,8 @@
   "scripts": {
     "compile": "tsc",
     "test": "ts-node node_modules/jasmine/bin/jasmine --config=jasmine.json",
-    "start": "nodemon",
-    "production": "ts-node src/index.ts"
+    "start": "ts-node src/index.ts",
+    "develop": "nodemon"
   },
   "dependencies": {
     "dotenv": "^8.2.0",
