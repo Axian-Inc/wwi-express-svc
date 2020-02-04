@@ -26,4 +26,4 @@ DB_PASS=somePassword
     - `Start the application in a debugging session`: Press `F5`, or click `Debug -> Start Debugging` from the VS Code top navigation.
     - `Start the application w/out debugger`:
         - Press `CTRL + F5`, or click `Debug -> Start Without Debugging` from the VS Code top navigation.
-        - Open a new VS Code terminal and run `yarn run develop`
+        - Open a new VS Code terminal and run `yarn develop`
