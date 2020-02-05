@@ -49,6 +49,9 @@ RUN apt-get update \
     && chmod 0440 /etc/sudoers.d/$USERNAME \
     # Install Azure CLI
     && curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash \
+    # Install pip3, groff and less (so `aws help` command works) and AWS CLI (via pip3 installer)
+    && apt-get -y install python3-venv python3-pip groff groff-base less \
+    && pip3 install awscli \
     # Clean up
     && apt-get autoremove -y \
     && apt-get clean -y \
