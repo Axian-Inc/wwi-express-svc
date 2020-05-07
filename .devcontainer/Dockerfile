@@ -49,6 +49,10 @@ RUN apt-get update \
     && chmod 0440 /etc/sudoers.d/$USERNAME \
     # Install Azure CLI
     && curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash \
+    # Install AWS CLI v2
+    && curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" \
+    && unzip awscliv2.zip \
+    && sudo ./aws/install \ 
     # Clean up
     && apt-get autoremove -y \
     && apt-get clean -y \
