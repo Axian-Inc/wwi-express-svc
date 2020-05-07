@@ -47,7 +47,8 @@ RUN apt-get update \
     && apt-get install -y sudo \
     && echo node ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/$USERNAME \
     && chmod 0440 /etc/sudoers.d/$USERNAME \
-    #
+    # Install Azure CLI
+    && curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash \
     # Clean up
     && apt-get autoremove -y \
     && apt-get clean -y \
