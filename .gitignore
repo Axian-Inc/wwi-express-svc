@@ -62,3 +62,9 @@ typings/
 
 # GraphQL
 schema.gql
+
+# Builds
+dist
+
+# Test Results
+spec/TestResults.xml
