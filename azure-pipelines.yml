@@ -35,17 +35,26 @@ stages:
         versionSpec: '10.x'
       displayName: 'Install Node.js v10'
 
+    # Restore depdencies, compile our Typescript, and run tests.
     - script: |
         yarn install
         yarn compile
         yarn test
       displayName: 'Restore, build and test'
     
+    # Publish test results.
     - task: PublishTestResults@2
       condition: succeededOrFailed()
       inputs:
-      testRunner: JUnit
-      testResultsFiles: 'spec/TestResults.xml'  
+        testResultsFormat: 'JUnit'
+        testResultsFiles: 'spec/TestResults.xml' 
+        failTaskOnFailedTests: true
+
+    # - task: PublishTestResults@2
+    #   condition: succeededOrFailed()
+    #   inputs:
+    #     testRunner: JUnit
+    #     testResultsFiles: 'spec/TestResults.xml'  
 
     - task: ArchiveFiles@2
       displayName: 'Archive files'
