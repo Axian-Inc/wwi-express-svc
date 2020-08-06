@@ -46,6 +46,7 @@ $> yarn build
 We'll run a different command in Azure so that we're executing the raw javascript as opposed to transpiling at runtime.
 
 **NOTE**: A big difference when running in live is that we won't be loading the contents of the `.env` file. You'll need to set this config in Azure for any appSettings/environment variables.
+Also, this command is intended to be run from INSIDE the `./dist` folder.
 
  ```
  $> yarn live

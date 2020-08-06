@@ -2,10 +2,10 @@
   "license": "UNLICENSED",
   "scripts": {
     "build": "tsc",
-    "postbuild": "cp package.json dist/package.json && cd dist && npm install --only=production",
+    "postbuild": "cp package.json yarn.lock dist/ && cd dist && yarn install --only=production",
     "test": "jasmine-ts --config=spec/support/jasmine.json",
     "start": "ts-node -r dotenv/config src/index.ts",
-    "live": "node dist/index.js",
+    "live": "node index.js",
     "develop": "nodemon"
   },
   "dependencies": {
