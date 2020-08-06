@@ -28,7 +28,7 @@ stages:
     # Restore depdencies, compile our Typescript, and run tests.
     - script: |
         yarn install
-        yarn compile
+        yarn build
         yarn test
       displayName: 'Restore, build and test'
     

@@ -28,14 +28,25 @@ DB_PASS=somePassword
         - Open a new VS Code terminal and run `yarn develop`
 
 ### Running Tests
-Tests are written in TypeScript and orchestrated via Jasmine. These tests are executed by running `yarn test` from the terminal (see `package.json` for underlying command).
+Tests are written in TypeScript and orchestrated via Jasmine. These tests are executed by running  the command below from the terminal (see `package.json` for underlying command).
+```
+$> yarn test
+```
 
 ### Compiling Code
 This application is written and executed locally using TypeScript (using the `ts-node` transpiler), but we'd rather run node/javascript in production.
-Run the `yarn compile` command from the terminal to execute the `tsc` compiler on our project using the settings in `tsconfig.json`.
+Run the command below from the terminal to execute the `tsc` compiler on our project using the settings in `tsconfig.json`.
 
-This process populates the `./dist` folder with semantically equivalent javascript.
+This process populates the `./dist` folder with semantically equivalent javascript. It also makes use of a `postbuild` command in the `package.json` which copies over `node_modules` and `package.json` (which has our startup command to run when we're deployed).
+```
+$> yarn build
+```
 
 ### Running in Azure
-The command to start the application will be `yarn live`. Note that this command DOES NOT load the `.env` file like `yarn develop` or `yarn start`. When we run in production we'll need to set our configuration through Azure.
+We'll run a different command in Azure so that we're executing the raw javascript as opposed to transpiling at runtime.
 
+**NOTE**: A big difference when running in live is that we won't be loading the contents of the `.env` file. You'll need to set this config in Azure for any appSettings/environment variables.
+
+ ```
+ $> yarn live
+ ```

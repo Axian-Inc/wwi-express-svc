@@ -1,7 +1,8 @@
 {
   "license": "UNLICENSED",
   "scripts": {
-    "compile": "tsc",
+    "build": "tsc",
+    "postbuild": "cp package.json dist/package.json && cd dist && npm install --only=production",
     "test": "jasmine-ts --config=spec/support/jasmine.json",
     "start": "ts-node -r dotenv/config src/index.ts",
     "live": "node dist/index.js",
