@@ -4,6 +4,7 @@
     "compile": "tsc",
     "test": "jasmine-ts --config=spec/support/jasmine.json",
     "start": "ts-node -r dotenv/config src/index.ts",
+    "live": "ts-node src/index.ts",
     "develop": "nodemon"
   },
   "dependencies": {
