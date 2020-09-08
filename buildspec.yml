@@ -23,3 +23,7 @@ phases:
             - echo Entered build phase...
             - yarn build
             - yarn test
+
+    artifacts:
+        files:
+            - dist/**/*
