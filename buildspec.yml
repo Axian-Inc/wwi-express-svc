@@ -1,6 +1,13 @@
 version: 0.2
 
 phases:
+    install:
+        runtime-versions:
+            nodejs: 10.x
+    pre_build:
+        commends:
+            - yarn install
     build:
         commands:
-            - echo Build started
+            - yarn build
+            - yarn test
