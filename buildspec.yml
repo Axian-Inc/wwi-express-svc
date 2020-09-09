@@ -1,29 +1,27 @@
 version: 0.2
 
 phases:
-    install:
-        runtime-versions:
-            nodejs: 10.x
-        commands:
-            - echo Entered install phase...
-            - apt-get update -y
-            - apt-get install apt-transport-https
-            # Setup for Yarn
-            - curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
-            - echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
-            # Do it!
-            - apt-get update -y
-            - apt-get install -y yarn
     pre_build:
         commands:
-            - echo Entered pre_build phase...
-            - yarn install
+            - echo Logging into Amazon ECR...
+            - aws --version
+            - $(aws ecr get-login --region $AWS_DEFAULT_REGION --no-include-email)
+            - REPOSITORY_URI=590316689173.dkr.ecr.us-west-2.amazonaws.com/jgb-ffthh
+            - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
+            - IMAGE_TAG=${COMMIT_HASH:=latest}
     build:
         commands:
-            - echo Entered build phase...
-            - yarn build
-            - yarn test
+            - echo Build phase...
+            - echo Building Docker image...
+            - docker build -t $REPOSITORY_URI:latest .
+            - docker tag $REPOSITORY_URI:latest $REPOSITORY_URI:$IMAGE_TAG
 
-    artifacts:
-        files:
-            - dist/**/*
+    post_build:
+        commands:
+            - echo Build completed on `date`
+            - echo Pushing the Docker images...
+            - docker push $REPOSITORY_URI:latest
+            - docker push $REPOSITORY_URI:$IMAGE_TAG
+artifacts:
+    files:
+        - imageDetail.json
