@@ -39,6 +39,7 @@ class App {
 
   public async listen() {
     const routeMap = `<html>
+    <h1>Create using CodeBuild, CodePipeline, ECR, and ECS</h1>
     ROUTES<br />
     <a href='/application/people' >top 10 people: "/application/people"</a><br />
     <a href='/purchasing/po' >top 10 purchaseOrders: "/purchasing/po"</a><br />
@@ -49,7 +50,7 @@ class App {
     const appRouter = new ApplicationRouter();
     this.app.use('/', appRouter.router);
     // Regular routes
-    this.app.get('/', async (req, res) => res.send( `<html><pre>${routeMap}</pre></html>`));
+    this.app.get('/', async (req, res) => res.send(`<html><pre>${routeMap}</pre></html>`));
 
     // 404s
     this.app.use((req, res) => {
@@ -58,7 +59,7 @@ class App {
 
     // tslint:disable-next-line:no-console
     this.app.listen(this._port, () => {
-      console.log( `server started at http://localhost:${ this._port }` );
+      console.log(`server started at http://localhost:${this._port}`);
     });
   }
 }
