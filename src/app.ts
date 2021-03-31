@@ -44,6 +44,11 @@ class App {
     <a href='/purchasing/po' >top 10 purchaseOrders: "/purchasing/po"</a><br />
     <a href='/sales/order' >top 10 salesOrders: "/sales/order"</a><br />
     <a href='/warehouse/stockItem' >top 10 stockItems: "/warehouse/stockItem"</a><br />
+    <iframe src="https://giphy.com/embed/ytTYwIlbD1FBu" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><br />
+    <iframe src="https://giphy.com/embed/a0Lgc1JvbfS4o" width="480" height="360" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><br />
+    <iframe src="https://giphy.com/embed/Swx36wwSsU49HAnIhC" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><br />
+    <iframe src="https://giphy.com/embed/3o72FcJmLzIdYJdmDe" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><br />
+    <iframe src="https://giphy.com/embed/1dagNhv8Oqu6l8U3ZK" width="480" height="360" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><br />
     </html>`;
 
     const appRouter = new ApplicationRouter();
