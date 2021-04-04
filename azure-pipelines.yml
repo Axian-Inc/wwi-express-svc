@@ -44,15 +44,15 @@ stages:
     - task: CmdLine@2
       inputs:
         script: |
-            echo Write your commands here
+            echo Displaying folder contents
             ls *
 
-    # - task: FileTransform@1
-    #   displayName: 'Updating Appsetings.json'
-    #   inputs:
-    #     folderPath: '$(System.DefaultWorkingDirectory)/dist'
-    #     fileType: 'json'
-    #     targetFiles: 'appsettings.json'
+    - task: FileTransform@1
+      displayName: 'Updating Appsetings.json'
+      inputs:
+        folderPath: '$(System.DefaultWorkingDirectory)/'
+        fileType: 'json'
+        targetFiles: 'appsettings.json'
 
     - task: ArchiveFiles@2
       displayName: 'Archive files'
