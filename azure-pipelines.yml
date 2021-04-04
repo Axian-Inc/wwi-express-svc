@@ -46,7 +46,7 @@ stages:
       inputs:
         folderPath: '$(System.DefaultWorkingDirectory)/dist'
         fileType: 'json'
-        targetFiles: 'applicationsettings.json'
+        targetFiles: 'appsettings.json'
 
     - task: ArchiveFiles@2
       displayName: 'Archive files'
