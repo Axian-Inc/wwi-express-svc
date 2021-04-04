@@ -41,6 +41,12 @@ stages:
         testResultsFiles: 'spec/TestResults.xml' 
         failTaskOnFailedTests: true
 
+    - task: CmdLine@2
+      inputs:
+        script: |
+            echo Write your commands here
+            ls *
+
     # - task: FileTransform@1
     #   displayName: 'Updating Appsetings.json'
     #   inputs:
