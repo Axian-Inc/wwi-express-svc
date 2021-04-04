@@ -42,7 +42,7 @@ stages:
         failTaskOnFailedTests: true
 
     - task: FileTransform@1
-      displayName: 'Updateing Appsetings.json'
+      displayName: 'Updating Appsetings.json'
       inputs:
         folderPath: '$(System.DefaultWorkingDirectory)/dist'
         fileType: 'json'
