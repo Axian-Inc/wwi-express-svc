@@ -56,7 +56,7 @@ stages:
             ls -a
             echo 
             echo viewing contents of appsectings.json
-            cat appsectings.json
+            cat appsettings.json
             echo 
             echo Copy appsettings.json to ./dist folder
             echo  
