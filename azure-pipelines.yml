@@ -53,10 +53,10 @@ stages:
       inputs:
         script: |
             echo Displaying folder contents
-            ls
+            ls -a
             cp appsettings.json '$(System.DefaultWorkingDirectory)/dist/appsettings.json'
-            cd /dist
-            ls
+            cd dist
+            ls -r
 
     - task: ArchiveFiles@2
       displayName: 'Archive files'
