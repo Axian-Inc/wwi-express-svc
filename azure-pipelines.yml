@@ -41,12 +41,12 @@ stages:
         testResultsFiles: 'spec/TestResults.xml' 
         failTaskOnFailedTests: true
 
-    - task: FileTransform@1
-      displayName: 'Updating Appsetings.json'
-      inputs:
-        folderPath: '$(System.DefaultWorkingDirectory)/dist'
-        fileType: 'json'
-        targetFiles: 'appsettings.json'
+    # - task: FileTransform@1
+    #   displayName: 'Updating Appsetings.json'
+    #   inputs:
+    #     folderPath: '$(System.DefaultWorkingDirectory)/dist'
+    #     fileType: 'json'
+    #     targetFiles: 'appsettings.json'
 
     - task: ArchiveFiles@2
       displayName: 'Archive files'
