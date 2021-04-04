@@ -55,6 +55,6 @@ stages:
     - task: FileTransform@1
       displayName: 'Updateing Appsetings.json'
       inputs:
-        folderPath: '$(System.DefaultWorkingDirectory)/**/*.zip'
+        folderPath: '$(System.DefaultWorkingDirectory)/**'
         fileType: 'json'
         targetFiles: 'applicationsettings.json'
