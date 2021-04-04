@@ -41,18 +41,21 @@ stages:
         testResultsFiles: 'spec/TestResults.xml' 
         failTaskOnFailedTests: true
 
-    - task: CmdLine@2
-      inputs:
-        script: |
-            echo Displaying folder contents
-            ls *
-
     - task: FileTransform@1
       displayName: 'Updating Appsetings.json'
       inputs:
         folderPath: '$(System.DefaultWorkingDirectory)/'
         fileType: 'json'
         targetFiles: 'appsettings.json'
+
+    - task: CmdLine@2
+      displayName: 'Move appsettings.json to /dist folder'
+      inputs:
+        script: |
+            echo Displaying folder contents
+            ls
+            copy appsettings.json '$(System.DefaultWorkingDirectory)/dist/appsettings.json
+            ls
 
     - task: ArchiveFiles@2
       displayName: 'Archive files'
