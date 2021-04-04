@@ -52,11 +52,17 @@ stages:
       displayName: 'Move appsettings.json to /dist folder'
       inputs:
         script: |
-            echo ### Displaying build folder contents ####
+            echo Displaying build folder contents
             ls -a
-            echo ### Copy appsettings to ./dist folder ####
+            echo 
+            echo viewing contents of appsectings.json
+            cat appsectings.json
+            echo 
+            echo Copy appsettings.json to ./dist folder
+            echo  
             cp appsettings.json '$(System.DefaultWorkingDirectory)/dist/appsettings.json'
-            echo ### Displaying dist folder contents ####
+            echo
+            echo Displaying dist folder contents 
             cd dist
             ls -r
 
