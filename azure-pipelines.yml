@@ -3,6 +3,7 @@
 # Add steps that analyze code, save build artifacts, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
 
+
 trigger:
 - sisco-FFTHH
 
@@ -11,6 +12,8 @@ variables:
   vmImageName: 'ubuntu-latest'
   # Build name/version
   name: $(SourceBranchName)_$(Date:yyyyMMdd)$(Rev:.r)
+
+ 
 stages:
 - stage: Build
   displayName: Build stage
@@ -21,6 +24,8 @@ stages:
       vmImage: $(vmImageName)
       
     steps:
+    - powershell: echo $(name)
+    - script: echo $(name)
     - task: NodeTool@0
       inputs:
         versionSpec: '10.x'
@@ -49,7 +54,7 @@ stages:
         targetFiles: 'appsettings.json'
 
     - task: CmdLine@2
-      displayName: 'Move appsettings.json to /dist folder'
+      displayName: 'Update app_version in .env file'
       inputs:
         script: |
             echo Displaying build folder contents
@@ -61,7 +66,6 @@ stages:
             echo Copy appsettings.json to ./dist folder
             echo  
             cp appsettings.json '$(System.DefaultWorkingDirectory)/dist/appsettings.json'
-            echo
             echo Displaying dist folder contents 
             cd dist
             ls -r
