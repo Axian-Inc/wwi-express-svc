@@ -11,7 +11,7 @@ variables:
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
   # Build name/version
-  name: $(SourceBranchName)_$(Date:yyyyMMdd)$(Rev:.r)
+  name: $(Date:yyyyMMdd)$(Rev:.r)
 
  
 stages:
@@ -24,7 +24,6 @@ stages:
       vmImage: $(vmImageName)
       
     steps:
-    - powershell: echo $(name)
     - script: echo $(name)
     - task: NodeTool@0
       inputs:
