@@ -11,7 +11,7 @@ variables:
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
   # Build name/version
-  name: $(Date:yyyyMMdd)$(Rev:.r)
+  name: ${Date:yyyyMMdd}${Rev:.r}
 
  
 stages:
