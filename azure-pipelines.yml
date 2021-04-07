@@ -10,10 +10,7 @@ trigger:
 variables:
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
-  # Build name/version
-  name: ${Date:yyyyMMdd}${Rev:.r}
 
- 
 stages:
 - stage: Build
   displayName: Build stage

@@ -7,6 +7,9 @@ import ApplicationService from "./services/application.service";
 import ApplicationRouter from "./routers/application.router";
 import { IRouter } from "./routers/router.interface";
 
+const data = require('./appsettings.json')
+const version = data.app_version
+
 class App {
   private _port: any;
   public app: express.Application;
@@ -50,7 +53,11 @@ class App {
     <iframe src="https://giphy.com/embed/Swx36wwSsU49HAnIhC" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><br />
     <iframe src="https://giphy.com/embed/3o72FcJmLzIdYJdmDe" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><br />
     <iframe src="https://giphy.com/embed/1dagNhv8Oqu6l8U3ZK" width="480" height="360" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><br />
+    
+    <div class='footer'>${version}</div>
     </html>`;
+    
+
 
     const appRouter = new ApplicationRouter();
     this.app.use('/', appRouter.router);
