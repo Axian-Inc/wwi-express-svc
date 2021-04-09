@@ -41,30 +41,6 @@ stages:
         testResultsFiles: 'spec/TestResults.xml' 
         failTaskOnFailedTests: true
 
-    - task: FileTransform@1
-      displayName: 'Updating Appsetings.json'
-      inputs:
-        folderPath: '$(System.DefaultWorkingDirectory)/'
-        fileType: 'json'
-        targetFiles: 'appsettings.json'
-
-    - task: CmdLine@2
-      displayName: 'Update app_version in .env file'
-      inputs:
-        script: |
-            echo Displaying build folder contents
-            ls -a
-            echo 
-            echo viewing contents of appsectings.json
-            cat appsettings.json
-            echo 
-            echo Copy appsettings.json to ./dist folder
-            echo  
-            cp appsettings.json '$(System.DefaultWorkingDirectory)/dist/appsettings.json'
-            echo Displaying dist folder contents 
-            cd dist
-            ls -r
-
     - task: ArchiveFiles@2
       displayName: 'Archive files'
       inputs:

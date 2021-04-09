@@ -7,7 +7,9 @@ import ApplicationService from "./services/application.service";
 import ApplicationRouter from "./routers/application.router";
 import { IRouter } from "./routers/router.interface";
 
-const version = process.env.APP_VERSION
+const APP_VERSION = process.env.APP_VERSION
+const BRANCH = process.env.BRANCH
+const ENV_NAME = process.env.ENV_NAME
 
 class App {
   private _port: any;
@@ -53,7 +55,7 @@ class App {
     <iframe src="https://giphy.com/embed/3o72FcJmLzIdYJdmDe" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><br />
     <iframe src="https://giphy.com/embed/1dagNhv8Oqu6l8U3ZK" width="480" height="360" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><br />
     
-    <div class='footer'>version: ${version}  link to build </div>
+    <div class='footer'>Version:\"${APP_VERSION}\" Branch:\"${BRANCH}\" Environment:\"${ENV_NAME}\"</div>
     </html>`;
 
     const appRouter = new ApplicationRouter();
