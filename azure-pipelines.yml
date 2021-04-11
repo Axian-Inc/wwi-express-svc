@@ -34,8 +34,10 @@ stages:
       displayName: 'Restore, build and test'
     
     - script: 
+        displayName: 'Echoing variables'
         echo $(Build.BuildNumber)
         echo $(Build.SourceBranchName)
+        python -version
 
     # Publish test results.
     - task: PublishTestResults@2
