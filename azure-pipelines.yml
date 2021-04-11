@@ -33,7 +33,7 @@ stages:
         yarn test
       displayName: 'Restore, build and test'
     
-    - powershell:  'python -version'
+    - powershell:  python
       displayName: 'Echoing variables'
       # echo $(Build.BuildNumber)
       # echo $(Build.SourceBranchName)
