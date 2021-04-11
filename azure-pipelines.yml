@@ -34,11 +34,11 @@ stages:
       displayName: 'Restore, build and test'
     
     - script: 
+      - powershell:  python -version
         displayName: 'Echoing variables'
         echo $(Build.BuildNumber)
         echo $(Build.SourceBranchName)
-        python -version
-
+      
     # Publish test results.
     - task: PublishTestResults@2
       condition: succeededOrFailed()
