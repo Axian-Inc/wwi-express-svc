@@ -33,11 +33,10 @@ stages:
         yarn test
       displayName: 'Restore, build and test'
     
-    - script: 
-      - powershell:  python -version
-          displayName: 'Echoing variables'
-          echo $(Build.BuildNumber)
-          echo $(Build.SourceBranchName)
+    - powershell:  python -version
+      displayName: 'Echoing variables'
+      echo $(Build.BuildNumber)
+      echo $(Build.SourceBranchName)
       
     # Publish test results.
     - task: PublishTestResults@2
