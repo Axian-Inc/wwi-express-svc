@@ -33,6 +33,9 @@ stages:
         yarn test
       displayName: 'Restore, build and test'
     
+    - script: 
+        echo $(Build.BuildNumber)
+
     # Publish test results.
     - task: PublishTestResults@2
       condition: succeededOrFailed()
