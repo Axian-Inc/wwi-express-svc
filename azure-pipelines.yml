@@ -35,6 +35,7 @@ stages:
     
     - script: 
         echo $(Build.BuildNumber)
+        echo $(Build.SourceBranchName)
 
     # Publish test results.
     - task: PublishTestResults@2
