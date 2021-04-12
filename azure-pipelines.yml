@@ -33,11 +33,14 @@ stages:
         yarn test
       displayName: 'Restore, build and test'
     
-    - powershell:  python print('hellow world')
-      displayName: 'Echoing variables'
-      # echo $(Build.BuildNumber)
-      # echo $(Build.SourceBranchName)
-      
+    # - task: PowerShell@2
+    #     inputs:
+    #       targetType: 'inline'
+    #       script: |
+    #       ((Get-Content -path $(System.DefaultWorkingDirectory)/readme.md -Raw) -replace 'brown','white') | Set-Content -Path $(System.DefaultWorkingDirectory)/readme.md
+    #       Get-Content -path $(System.DefaultWorkingDirectory)/readme.md
+    #       Write-Host "Hello World"
+
     # Publish test results.
     - task: PublishTestResults@2
       condition: succeededOrFailed()
