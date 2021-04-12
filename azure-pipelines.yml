@@ -33,7 +33,7 @@ stages:
         yarn test
       displayName: 'Restore, build and test'
     
-    - powershell:  python -V
+    - powershell:  python print('hellow world')
       displayName: 'Echoing variables'
       # echo $(Build.BuildNumber)
       # echo $(Build.SourceBranchName)
