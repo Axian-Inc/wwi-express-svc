@@ -1,0 +1,17 @@
+version: 0.2
+phases:
+    pre_build:
+        commands:
+            - echo PRE_BUILD started
+            - aws --version
+            - $(aws ecr get-login --region $AWS_DEFAULT_REGION --no-include-email)
+            - REPOSITORY_URI={{REPLACE_ME_WITH_YOUR_ECR_REPOSITORY_URI}}
+    build:
+        commands:
+            - echo BUILD started
+            - docker build -t $REPOSITORY_URI:latest .
+
+    post_build:
+        commands:
+            - echo POST_BUILD started
+            - docker push $REPOSITORY_URI:latest
