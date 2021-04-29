@@ -5,7 +5,7 @@ phases:
             - echo PRE_BUILD started
             - aws --version
             - $(aws ecr get-login --region $AWS_DEFAULT_REGION --no-include-email)
-            - REPOSITORY_URI={"590316689173.dkr.ecr.us-west-2.amazonaws.com/ffthh/sisco/wwi-express-svc"}
+            - REPOSITORY_URI={"/590316689173.dkr.ecr.us-west-2.amazonaws.com/ffthh/sisco/wwi-express-svc"}
             - echo REPOSITORY_URI
     build:
         commands:
