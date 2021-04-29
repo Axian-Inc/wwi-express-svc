@@ -55,7 +55,7 @@ class App {
     <iframe src="https://giphy.com/embed/3o72FcJmLzIdYJdmDe" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><br />
     <iframe src="https://giphy.com/embed/1dagNhv8Oqu6l8U3ZK" width="480" height="360" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><br />
     
-    <div class='footer'>Version:\"${APP_VERSION}\" Branch:\"${BRANCH}\" Environment:\"${ENV_NAME}\"</div>
+    <div class='footer'><strong>Version:</strong>\"${APP_VERSION}\" Branch:\"${BRANCH}\" Environment:\"${ENV_NAME}\"</div>
     </html>`;
 
     const appRouter = new ApplicationRouter();
