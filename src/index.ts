@@ -4,12 +4,15 @@ import PurchasingRouter from "./routers/purchasing.router";
 import SalesRouter from "./routers/sales.router";
 import WarehouseRouter from "./routers/warehouse.router";
 
-const app = new App(process.env.PORT || 8081, [
-  new ApplicationRouter(),
-  new PurchasingRouter(),
-  new SalesRouter(),
-  new WarehouseRouter
-]);
+const app = new App(
+  process.env.PORT || 8081, 
+  process.env.HOSTNAME || "localhost",
+  [
+    new ApplicationRouter(),
+    new PurchasingRouter(),
+    new SalesRouter(),
+    new WarehouseRouter
+  ]);
 
 // start the Express server
 app.listen();

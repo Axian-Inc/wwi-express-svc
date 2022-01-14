@@ -6,13 +6,16 @@ import WarehouseService from "./services/warehouse.service";
 import ApplicationService from "./services/application.service";
 import ApplicationRouter from "./routers/application.router";
 import { IRouter } from "./routers/router.interface";
+import { hostname } from "os";
 
 class App {
   private _port: any;
+  private _hostname: string;
   public app: express.Application;
 
-  constructor(port: any, routers: IRouter[]) {
+  constructor(port: any, hostname: string, routers: IRouter[]) {
     this._port = port;
+    this._hostname = hostname;
     this.app = express();
     this.setupCORS();
     this.setupRoutes(routers);
@@ -44,6 +47,7 @@ class App {
     <a href='/purchasing/po' >top 10 purchaseOrders: "/purchasing/po"</a><br />
     <a href='/sales/order' >top 10 salesOrders: "/sales/order"</a><br />
     <a href='/warehouse/stockItem' >top 10 stockItems: "/warehouse/stockItem"</a><br />
+    Served from: ${hostname}
     </html>`;
 
     const appRouter = new ApplicationRouter();
